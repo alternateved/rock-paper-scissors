@@ -21,6 +21,11 @@
             }
         }
         
+        // create a function that gets input from the user
+        function playerPlay() {
+            return prompt("What is your play?");
+        }
+        
         // creat a function called getRandom that will randomly return a number from 1 to 3
         function getRandom() {
             return Math.floor(Math.random() * Math.floor(3)) + 1;
@@ -30,11 +35,13 @@
         function capitalize (string) {
             return string[0].toUpperCase() + string.slice(1).toLowerCase();
         }
+
         /* create a function called singlePlay that will play a single round of the game. 
         The function should:
             - take two parameters - the playerSelection and computerSelection
             - return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
             - be case insensitive. */ 
+
         function singlePlay(playerSelection, computerSelection) {
             pass;
         }
