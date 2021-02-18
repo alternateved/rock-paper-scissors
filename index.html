@@ -69,7 +69,7 @@
             }
         }
 
-        // create a function called game which will use singlePlay to play a 5-round game
+        // create a function called game which will use singlePlay to play a 5-round game and also keeps score
         function game() {
             let round = 1;
             let playerResult = 0;
@@ -85,17 +85,18 @@
                 round++;
             }
 
-            showScore(playerResult, computerResult);
+            showVerdict(playerResult, computerResult);
         }
-        
-        // create a function called showScore that keeps score and prints it to the screen
-        function showScore(playerScore, computerScore) {
-            pass;
+
+        // create a function called showScore that prints score to the screen
+        function showVerdict(playerScore, computerScore) {
+            if (playerScore > computerScore) {
+                alert(`Congratulations! You have won ${playerScore} to ${computerScore}.`)
+            } else {
+                alert(`Sorry! Not this time! You have lost ${playerScore} to ${computerScore}.`)
+            }
         }
-        // create a function called showVerdict that reports a winner or loser at the end
-        function showVerdict() {
-            pass;
-        }
+
     </script>
 </body>
 
