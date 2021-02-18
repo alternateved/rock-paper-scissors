@@ -68,11 +68,26 @@
                 return -1;
             }
         }
-        
+
         // create a function called game which will use singlePlay to play a 5-round game
         function game() {
-            pass;
+            let round = 1;
+            let playerResult = 0;
+            let computerResult = 0;
+
+            while(round <= 5) {
+                result = singlePlay(playerPlay(),computerPlay());
+                if (result === 1) {
+                    playerResult++;
+                } else {
+                    computerResult++
+                }
+                round++;
+            }
+
+            showScore(playerResult, computerResult);
         }
+        
         // create a function called showScore that keeps score and prints it to the screen
         function showScore(playerScore, computerScore) {
             pass;
