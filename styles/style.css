@@ -7,13 +7,13 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  font-size: calc(0.7rem + 1vw);
+  font-size: calc(0.7rem + 0.7vw);
   line-height: calc(1.1rem + 0.5vw);
 }
 
 header {
   flex: 0 0 auto;
-  font-size: calc(1rem + 1.5vw);
+  font-size: calc(0.8rem + 1vw);
   text-align: center;
   background-color: #c8c8c8;
   padding: 1rem;
@@ -30,8 +30,8 @@ main {
 .intro {
   color: white;
   background-color: firebrick;
-  height: 100px;
-  width: 500px;
+  height: 10vh;
+  width: 70vw;
   border: 1px black solid;
   margin: 5px;
   padding: 10px;
@@ -40,28 +40,39 @@ main {
 .computer-side {
   color: white;
   background-color: firebrick;
-  height: 150px;
-  width: 500px;
+  height: 15vh;
+  width: 70vw;
   border: 1px black solid;
   margin: 5px;
   padding: 10px;
 }
 
 .player-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   color: white;
-  background-color: firebrick;
-  height: 150px;
-  width: 500px;
+  height: 15vh;
+  width: 70vw;
   border: 1px black solid;
   margin: 5px;
   padding: 10px;
 }
 
+.images {
+  -webkit-filter: drop-shadow(1px 1px 0 black) 
+                  drop-shadow(-1px -1px 0 white);
+
+  filter:drop-shadow(1px 1px 0 black) 
+        drop-shadow(-1px -1px 0 white);
+
+}
+
 .score {
   color: white;
   background-color: firebrick;
-  height: 150px;
-  width: 500px;
+  height: 15vh;
+  width: 70vw;
   border: 1px black solid;
   margin: 5px;
   padding: 10px;
@@ -69,7 +80,7 @@ main {
 
 footer {
   flex: 0 0 auto;
-  font-size: calc(0.6em + 0.5vw);
+  font-size: calc(0.6rem + 0.5vw);
   text-align: center;
   background-color: #c8c8c8;
   padding: 1rem;
