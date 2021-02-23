@@ -1,0 +1,74 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(0.7rem + 1vw);
+  line-height: calc(1.1rem + 0.5vw);
+}
+
+header {
+  font-size: calc(1rem + 1.5vw);
+  text-align: center;
+  background-color: #c8c8c8;
+  padding: 1rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  outline: 1px solid black;
+}
+.intro {
+  color: white;
+  background-color: firebrick;
+  height: 100px;
+  width: 500px;
+  border: 1px black solid;
+  margin: 5px;
+  padding: 10px;
+}
+
+.computer-side {
+  color: white;
+  background-color: firebrick;
+  height: 150px;
+  width: 500px;
+  border: 1px black solid;
+  margin: 5px;
+  padding: 10px;
+}
+
+.player-side {
+  color: white;
+  background-color: firebrick;
+  height: 150px;
+  width: 500px;
+  border: 1px black solid;
+  margin: 5px;
+  padding: 10px;
+}
+
+.score {
+  color: white;
+  background-color: firebrick;
+  height: 150px;
+  width: 500px;
+  border: 1px black solid;
+  margin: 5px;
+  padding: 10px;
+}
+
+footer {
+  font-size: calc(0.6em + 0.5vw);
+  text-align: center;
+  background-color: #c8c8c8;
+  padding: 1rem;
+}
