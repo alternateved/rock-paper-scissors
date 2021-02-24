@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400&family=Syncopate:wght@700&display=swap');
 
-html, body {
+html, body, p{
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  height: 100%;
 }
 
 body {
@@ -33,10 +33,10 @@ main {
   outline: 1px solid #e4e4e4;
 }
 .intro {
+  text-align: center;
   background-color: white;
   height: 10vh;
   width: 70vw;
-  border: 1px black solid;
   margin: 5px;
   padding: 10px;
 }
@@ -56,7 +56,7 @@ main {
 .player-side {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   color: white;
   height: 15vh;
   width: 70vw;
@@ -71,7 +71,7 @@ main {
 
   filter:drop-shadow(1px 1px 0 black) 
         drop-shadow(-1px -1px 0 white);
-
+  border: 0;
 }
 
 .score {
