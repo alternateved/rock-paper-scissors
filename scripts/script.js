@@ -50,9 +50,9 @@ function getRandom() {
 // function called singlePlay that will play a single round of the game. 
 function singlePlay(playerSelection, computerSelection) {
   const comment = document.querySelector(".intro > p");
+
   if (playerSelection === computerSelection) {
     comment.textContent = `It's a tie! ${playerSelection} doesn't do much to ${computerSelection}.`;
-
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     comment.textContent = "You Win! Rock beats Scissors";
     return 1;
@@ -78,16 +78,14 @@ function singlePlay(playerSelection, computerSelection) {
 function playRound(playerSelection) {
   playerSelection = playerPlay(playerSelection);
   computerSelection = computerPlay();
-  console.log(`Computer's choice is ${computerSelection}`);
-  console.log(`Player's choice is ${playerSelection}`);
-
+ 
   return singlePlay(playerSelection, computerSelection);
 }
 
 // function called showScore that prints score to the screen
 function showVerdict(playerScore, computerScore) {
   const verdict = document.querySelector(".intro > p");
-
+  verdict.classList.add("typing-effect");
   if (playerScore > computerScore) {
     verdict.textContent = `CONGRATULATIONS! You have won ${playerScore} to ${computerScore}.`;
   } else {
