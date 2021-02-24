@@ -41,6 +41,11 @@ main {
   padding: 10px;
 }
 
+.intro p {
+  margin: auto;
+  padding: 10px;
+}
+
 .computer-side {
   display: flex;
   flex-direction: row;
@@ -96,11 +101,25 @@ main {
 }
 
 .score {
+  font-size: calc(1rem + 0.7vw);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
   background-color: white;
   height: 15vh;
   width: 70vw;
   border: 1px black solid;
   margin: 5px;
+  padding: 10px;
+}
+
+#player-score {
+  padding: 10px;
+}
+
+#computer-score {
   padding: 10px;
 }
 

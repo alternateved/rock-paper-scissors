@@ -14,6 +14,7 @@ function computerPlay() {
   }
 }
 
+// function that loops through player's choices and removes applied class
 function removeEffect() {
   let previousChoices = document.querySelectorAll(".images");
   previousChoices.forEach(choice => {
@@ -48,27 +49,27 @@ function getRandom() {
 
 // function called singlePlay that will play a single round of the game. 
 function singlePlay(playerSelection, computerSelection) {
-
+  const comment = document.querySelector(".intro > p");
   if (playerSelection === computerSelection) {
-    console.log(`It's a tie! ${playerSelection} doesn't do much to ${computerSelection}.`);
+    comment.textContent = `It's a tie! ${playerSelection} doesn't do much to ${computerSelection}.`;
 
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    console.log("You Win! Rock beats Scissors");
+    comment.textContent = "You Win! Rock beats Scissors";
     return 1;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    console.log("You Win! Scissors beats Paper");
+    comment.textContent = "You Win! Scissors beats Paper";
     return 1;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    console.log("You Win! Paper beats Rock");
+    comment.textContent = "You Win! Paper beats Rock";
     return 1;
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    console.log("You Lose! Rock beats Paper");
+    comment.textContent = "You Lose! Rock beats Paper";
     return -1;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    console.log("You Lose! Paper beats Scissors");
+    comment.textContent = "You Lose! Paper beats Scissors";
     return -1;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    console.log("You Lose! Scissors beats Rock");
+    comment.textContent = "You Lose! Scissors beats Rock";
     return -1;
   }
 }
@@ -76,9 +77,7 @@ function singlePlay(playerSelection, computerSelection) {
 // function called playRound which comments what is happening on the battlefield
 function playRound(playerSelection) {
   playerSelection = playerPlay(playerSelection);
-  // HERE SET THE CCS ANIMATION
   computerSelection = computerPlay();
-  // HERE SET THE COMPUTER ANIMATION
   console.log(`Computer's choice is ${computerSelection}`);
   console.log(`Player's choice is ${playerSelection}`);
 
@@ -87,12 +86,44 @@ function playRound(playerSelection) {
 
 // function called showScore that prints score to the screen
 function showVerdict(playerScore, computerScore) {
+  const verdict = document.querySelector(".intro > p");
+
   if (playerScore > computerScore) {
-    console.log(`CONGRATULATIONS! You have won ${playerScore} to ${computerScore}.`);
+    verdict.textContent = `CONGRATULATIONS! You have won ${playerScore} to ${computerScore}.`;
   } else {
-    console.log(`Sorry! Not this time! You have lost ${playerScore} to ${computerScore}.`);
+    verdict.textContent = `Sorry! Not this time! You have lost ${playerScore} to ${computerScore}.`;
   }
 }
 
-const choices = document.querySelectorAll(".images");
-choices.forEach(choice => choice.addEventListener("click", playRound));
+// function that plays a 5-round game and keeps score
+function playGame() {
+  let result = 0;
+  let playerResult = 0;
+  let computerResult = 0;
+
+  const playerScore = document.querySelector("#player-score");
+  const computerScore = document.querySelector("#computer-score");
+
+
+  const choices = document.querySelectorAll(".images");
+
+  choices.forEach(choice => {
+    choice.addEventListener("click", event => {
+      result = playRound(event);
+      if (playerResult == 5 || computerResult == 5) {
+        showVerdict(playerResult, computerResult);
+      } else {
+        if (result == 1) {
+          playerResult++;
+          playerScore.textContent = `Player: ${playerResult}`;
+        } else if (result == -1) {
+          computerResult++;
+          computerScore.textContent = `Computer:  ${computerResult}`;
+        }
+      }
+    })
+  });
+
+}
+
+playGame();
