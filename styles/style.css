@@ -52,6 +52,16 @@ main {
   padding: 10px;
 }
 
+.computer-side img {
+  transform: scale(1) scaleX(-1);
+  -webkit-filter: drop-shadow(1.5px 1.5px 0 green) 
+                  drop-shadow(-1.5px -1.5px 0 whgreenite);
+
+  filter: drop-shadow(1.5px 1.5px 0 green) 
+          drop-shadow(-1.5px -1.5px 0 green);
+  border: 0;
+}
+
 .player-side {
   display: flex;
   flex-direction: row;
@@ -68,9 +78,21 @@ main {
   -webkit-filter: drop-shadow(1px 1px 0 black) 
                   drop-shadow(-1px -1px 0 white);
 
-  filter:drop-shadow(1px 1px 0 black) 
-        drop-shadow(-1px -1px 0 white);
+  filter: drop-shadow(1px 1px 0 black) 
+          drop-shadow(-1px -1px 0 white);
   border: 0;
+}
+
+.active {
+  transform: scale(1.2);
+  -webkit-filter: drop-shadow(1.5px 1.5px 0 red) 
+                  drop-shadow(-1.5px -1.5px 0 red);
+
+  filter: drop-shadow(1.5px 1.5px 0 red) 
+          drop-shadow(-1.5px -1.5px 0 red);
+  border: 0;
+  outline: none;
+
 }
 
 .score {

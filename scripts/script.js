@@ -14,18 +14,30 @@ function computerPlay() {
   }
 }
 
+function removeEffect() {
+  let previousChoices = document.querySelectorAll(".images");
+  previousChoices.forEach(choice => {
+    if (choice.classList.contains("active")) {
+      choice.classList.remove('active');
+    } else return;
+  })
+
+}
+
 // function that outputs computer move
-function showComputerMove (source) {
+function showComputerMove(source) {
   let computerContainer = document.querySelector(".computer-side");
   let oldMove = document.querySelector(".computer-side > img");
   let move = document.createElement("img");
 
   move.setAttribute("src", source);
-  computerContainer.replaceChild(move,oldMove);
+  computerContainer.replaceChild(move, oldMove);
 }
 
 // function that gets input from the user
 function playerPlay(playerSelection) {
+  removeEffect();
+  playerSelection.target.classList.add('active');
   return playerSelection.target.getAttribute("id");
 }
 
