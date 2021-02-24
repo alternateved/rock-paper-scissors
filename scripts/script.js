@@ -1,29 +1,42 @@
-// create a funtion called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
+// funtion called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
 function computerPlay() {
   let result = getRandom();
 
   if (result === 1) {
+    showComputerMove("images/rock.png");
     return "rock";
   } else if (result === 2) {
+    showComputerMove("images/paper.png");
     return "paper";
   } else {
+    showComputerMove("images/scissors.png");
     return "scissors";
   }
 }
 
-// create a function that gets input from the user
+// function that outputs computer move
+function showComputerMove (source) {
+  let computerContainer = document.querySelector(".computer-side");
+  let oldMove = document.querySelector(".computer-side > img");
+  let move = document.createElement("img");
+
+  move.setAttribute("src", source);
+  computerContainer.replaceChild(move,oldMove);
+}
+
+// function that gets input from the user
 function playerPlay(playerSelection) {
   return playerSelection.target.getAttribute("id");
 }
 
-// creat a function called getRandom that will randomly return a number from 1 to 3
+// function called getRandom that will randomly return a number from 1 to 3
 function getRandom() {
   return Math.floor(Math.random() * Math.floor(3)) + 1;
 }
 
-// create a function called singlePlay that will play a single round of the game. 
+// function called singlePlay that will play a single round of the game. 
 function singlePlay(playerSelection, computerSelection) {
-  
+
   if (playerSelection === computerSelection) {
     console.log(`It's a tie! ${playerSelection} doesn't do much to ${computerSelection}.`);
 
@@ -60,7 +73,7 @@ function playRound(playerSelection) {
   return singlePlay(playerSelection, computerSelection);
 }
 
-// create a function called showScore that prints score to the screen
+// function called showScore that prints score to the screen
 function showVerdict(playerScore, computerScore) {
   if (playerScore > computerScore) {
     console.log(`CONGRATULATIONS! You have won ${playerScore} to ${computerScore}.`);
