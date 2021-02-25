@@ -3,9 +3,10 @@
 // 2. Fix unending loop somehow and finish the game
 // 3. Make it possible to play once again
 
-const playerScore = document.querySelector("#player-score");
+const scoreContainer = document.querySelector(".score");
 const computerContainer = document.querySelector(".computer-side");
 const computerScore = document.querySelector("#computer-score");
+const playerScore = document.querySelector("#player-score");
 const commentary = document.querySelector(".intro > p");
 const choices = document.querySelectorAll(".images");
 
@@ -95,14 +96,18 @@ function playRound(playerSelection) {
 }
 
 // function called showScore that prints score to the screen
-function showVerdict(playerScore, computerScore) {
+function showVerdict() {
+  let verdict = document.createElement("h3");
 
-  commentary.classList.add("typing-effect");
-  if (playerScore > computerScore) {
-    commentary.textContent = `CONGRATULATIONS! You have won ${playerScore} to ${computerScore}.`;
+  verdict.classList.add("typing-effect");
+  playerScore.classList.add("hidden");
+  computerScore.classList.add("hidden");
+  if (playerResult > computerResult) {
+    verdict.textContent = `CONGRATULATIONS! You have won ${playerResult} to ${computerResult}.`;
   } else {
-    commentary.textContent = `Sorry! Not this time! You have lost ${playerScore} to ${computerScore}.`;
+    verdict.textContent = `Sorry! Not this time! You have lost ${playerResult} to ${computerResult}.`;
   }
+  scoreContainer.appendChild(verdict);
 }
 
 // function that plays a 5-round game and keeps score
@@ -112,7 +117,7 @@ function playGame() {
     choice.addEventListener("click", event => {
       playRound(event);
       if (playerResult == 5 || computerResult == 5) {
-        showVerdict(playerResult, computerResult);
+        showVerdict();
       }
     })
   });
