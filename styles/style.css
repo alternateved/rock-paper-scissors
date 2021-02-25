@@ -13,18 +13,22 @@ body {
   font-size: calc(0.7rem + 0.7vw);
   line-height: calc(1.1rem + 0.5vw);
   font-family: 'Exo 2', sans-serif;
+  background-color: #F5F5F5;
 }
 
 header {
   flex: 0 0 auto;
   font-size: calc(0.8rem + 1vw);
   text-align: center;
-  background-color: white;
+  background-color: #DEDEDE;
+}
+
+header h1 {
   padding: 1rem;
   font-family: 'Syncopate', sans-serif;
   -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
   -webkit-mask-size: 200%;
-  animation: shine 3s linear 1.7;
+  animation: shine 3s linear infinite;
 }
 
 @keyframes shine {
@@ -38,11 +42,10 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  outline: 1px solid #e4e4e4;
+  outline: 3px solid #e4e4e4ef;
 }
 .intro {
   text-align: center;
-  background-color: white;
   height: 8vh;
   width: 70vw;
   margin: 5px;
@@ -72,7 +75,6 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: white;
   height: 15vh;
   width: 70vw;
   margin: 5px;
@@ -93,10 +95,10 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  color: white;
   height: 15vh;
   width: 70vw;
-  border: 5px #e4e4e4 groove;
+  border: 5px #e4e4e4 inset;
+  border-radius: 100px;
   margin: 5px;
   padding: 10px;
 }
@@ -130,6 +132,12 @@ main {
 .hidden {
   display: none;
 }
+
+.opacity {
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
 .score {
   font-size: calc(1rem + 0.7vw);
   display: flex;
@@ -137,7 +145,6 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  background-color: white;
   height: 15vh;
   width: 70vw;
 
@@ -157,7 +164,7 @@ footer {
   flex: 0 0 auto;
   font-size: calc(0.6rem + 0.5vw);
   text-align: center;
-  background-color: white;
   padding: 1rem;
-  border: 1px solid #e4e4e4;
+  background-color: #DEDEDE;
+  border: 3px solid #e4e4e4ef;
 }

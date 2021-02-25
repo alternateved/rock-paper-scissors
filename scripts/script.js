@@ -9,6 +9,7 @@ const computerScore = document.querySelector("#computer-score");
 const playerScore = document.querySelector("#player-score");
 const commentary = document.querySelector(".intro > p");
 const choices = document.querySelectorAll(".images");
+const tryAgainButton = document.querySelector("#try-again");
 
 let playerResult = 0;
 let computerResult = 0;
@@ -114,8 +115,12 @@ function finishGame() {
   if (playerResult == 5 || computerResult == 5) {
     choices.forEach(choice => {
       choice.setAttribute("disabled", "");
+      choice.classList.add("opacity");
+      choice.style.pointerEvents = "none";
+      computerContainer.classList.add("opacity");
     });
     showVerdict();
+    
   }
 }
 
