@@ -7,6 +7,7 @@ const scoreContainer = document.querySelector(".score");
 const computerContainer = document.querySelector(".computer-side");
 const computerScore = document.querySelector("#computer-score");
 const playerScore = document.querySelector("#player-score");
+const introContainer = document.querySelector(".intro");
 const commentary = document.querySelector(".intro > p");
 const choices = document.querySelectorAll(".images");
 const tryAgainButton = document.querySelector("#try-again");
@@ -111,16 +112,28 @@ function showVerdict() {
   scoreContainer.appendChild(verdict);
 }
 
+function resetGame() {
+  let endComment = document.createElement("h3");
+  endComment.classList.add("end-game");
+  endComment.textContent = "Would you like to try your luck again?";
+  introContainer.replaceChild(endComment, commentary);
+
+  tryAgainButton.classList.remove("hidden");
+  tryAgainButton.addEventListener("click", () => {
+    window.location.reload();
+  });
+}
+
 function finishGame() {
   if (playerResult == 5 || computerResult == 5) {
     choices.forEach(choice => {
       choice.setAttribute("disabled", "");
       choice.classList.add("opacity");
       choice.style.pointerEvents = "none";
-      computerContainer.classList.add("opacity");
+      computerContainer.removeChild(computerContainer.firstChild);
     });
     showVerdict();
-    
+    resetGame();
   }
 }
 
