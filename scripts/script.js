@@ -110,15 +110,22 @@ function showVerdict() {
   scoreContainer.appendChild(verdict);
 }
 
+function finishGame() {
+  if (playerResult == 5 || computerResult == 5) {
+    choices.forEach(choice => {
+      choice.setAttribute("disabled", "");
+    });
+    showVerdict();
+  }
+}
+
 // function that plays a 5-round game and keeps score
 function playGame() {
 
   choices.forEach(choice => {
     choice.addEventListener("click", event => {
       playRound(event);
-      if (playerResult == 5 || computerResult == 5) {
-        showVerdict();
-      }
+      finishGame();
     })
   });
 }
