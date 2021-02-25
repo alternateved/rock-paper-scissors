@@ -22,6 +22,14 @@ header {
   background-color: white;
   padding: 1rem;
   font-family: 'Syncopate', sans-serif;
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 3s linear 1.7;
+}
+
+@keyframes shine {
+  from { -webkit-mask-position: 150%; }
+  to { -webkit-mask-position: -50%; }
 }
 
 main {
