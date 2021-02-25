@@ -1,8 +1,3 @@
-// REWORK:
-// 1. Make global variables to keep it under control
-// 2. Fix unending loop somehow and finish the game
-// 3. Make it possible to play once again
-
 const scoreContainer = document.querySelector(".score");
 const computerContainer = document.querySelector(".computer-side");
 const computerScore = document.querySelector("#computer-score");
@@ -15,7 +10,7 @@ const tryAgainButton = document.querySelector("#try-again");
 let playerResult = 0;
 let computerResult = 0;
 
-// funtion called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
+// funtion that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
 function computerPlay() {
   let result = getRandom();
 
@@ -51,18 +46,18 @@ function showComputerMove(source) {
   computerContainer.replaceChild(newMove, computerMove);
 }
 
-// function that gets input from the user
+// function shows player's input
 function showPlayerMove(playerSelection) {
   removeEffect();
   playerSelection.target.classList.add('active');
 }
 
-// function called getRandom that will randomly return a number from 1 to 3
+// function that will randomly return a number from 1 to 3
 function getRandom() {
   return Math.floor(Math.random() * Math.floor(3)) + 1;
 }
 
-// function called playRound which comments what is happening on the battlefield
+// function which comments what is happening on the battlefield
 function playRound(playerSelection) {
   showPlayerMove(playerSelection);
   playerSelection = playerSelection.target.getAttribute("id");
@@ -97,7 +92,7 @@ function playRound(playerSelection) {
   }
 }
 
-// function called showScore that prints score to the screen
+// function that prints score to the screen
 function showVerdict() {
   let verdict = document.createElement("h3");
 
@@ -112,6 +107,7 @@ function showVerdict() {
   scoreContainer.appendChild(verdict);
 }
 
+// function that reloads page with player's consent
 function resetGame() {
   let endComment = document.createElement("h3");
   endComment.classList.add("end-game");
@@ -124,6 +120,7 @@ function resetGame() {
   });
 }
 
+// function that disables interactive side of the page
 function finishGame() {
   if (playerResult == 5 || computerResult == 5) {
     choices.forEach(choice => {
