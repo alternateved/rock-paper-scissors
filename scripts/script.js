@@ -60,8 +60,10 @@ function getRandom() {
   return Math.floor(Math.random() * Math.floor(3)) + 1;
 }
 
-// function called singlePlay that will play a single round of the game. 
-function singlePlay(playerSelection, computerSelection) {
+// function called playRound which comments what is happening on the battlefield
+function playRound(playerSelection) {
+  playerSelection = playerPlay(playerSelection);
+  computerSelection = computerPlay();
 
   if (playerSelection === computerSelection) {
     commentary.textContent = `It's a tie! ${playerSelection} doesn't do much to ${computerSelection}.`;
@@ -90,13 +92,6 @@ function singlePlay(playerSelection, computerSelection) {
     computerResult++;
     computerScore.textContent = `Computer:  ${computerResult}`;
   }
-}
-
-// function called playRound which comments what is happening on the battlefield
-function playRound(playerSelection) {
-  playerSelection = playerPlay(playerSelection);
-  computerSelection = computerPlay();
-  singlePlay(playerSelection, computerSelection);
 }
 
 // function called showScore that prints score to the screen
