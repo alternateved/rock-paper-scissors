@@ -49,10 +49,9 @@ function showComputerMove(source) {
 }
 
 // function that gets input from the user
-function playerPlay(playerSelection) {
+function showPlayerMove(playerSelection) {
   removeEffect();
   playerSelection.target.classList.add('active');
-  return playerSelection.target.getAttribute("id");
 }
 
 // function called getRandom that will randomly return a number from 1 to 3
@@ -62,7 +61,8 @@ function getRandom() {
 
 // function called playRound which comments what is happening on the battlefield
 function playRound(playerSelection) {
-  playerSelection = playerPlay(playerSelection);
+  showPlayerMove(playerSelection);
+  playerSelection = playerSelection.target.getAttribute("id");
   computerSelection = computerPlay();
 
   if (playerSelection === computerSelection) {
